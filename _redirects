@@ -1,10 +1,11 @@
 # Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
-# Clean/alias URLs -> actual pages (301 permanent)
+#
+# NOTE: Cloudflare Pages already serves clean URLs automatically and redirects
+# "/page.html" -> "/page". So we must NOT redirect "/page" -> "/page.html"
+# (that creates an infinite loop). These rules only add extra *aliases* that
+# point at the canonical clean URLs.
 
-/privacy        /privacy.html         301
-/privacy-policy /privacy.html         301
-/terms          /terms.html           301
-/tos            /terms.html           301
-/delete         /delete-account.html  301
-/delete-account /delete-account.html  301
-/account-deletion /delete-account.html 301
+/privacy-policy    /privacy         301
+/tos               /terms           301
+/delete            /delete-account  301
+/account-deletion  /delete-account  301
