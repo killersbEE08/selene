@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
+# Clean/alias URLs -> actual pages (301 permanent)
+
+/privacy        /privacy.html         301
+/privacy-policy /privacy.html         301
+/terms          /terms.html           301
+/tos            /terms.html           301
+/delete         /delete-account.html  301
+/delete-account /delete-account.html  301
+/account-deletion /delete-account.html 301
