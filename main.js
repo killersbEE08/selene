@@ -51,4 +51,40 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
+
+  // FAQ accordion
+  var qas = document.querySelectorAll(".qa");
+  qas.forEach(function (qa) {
+    var btn = qa.querySelector("button");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var open = qa.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
+
+  // Count-up for hero stats
+  var nums = document.querySelectorAll(".stat .n");
+  if (nums.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var seen = new WeakSet();
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting || seen.has(e.target)) return;
+        seen.add(e.target);
+        var el = e.target;
+        var target = parseInt(el.textContent, 10) || 0;
+        var start = null, dur = 1100;
+        el.textContent = "0";
+        function tick(t) {
+          if (start === null) start = t;
+          var p = Math.min(1, (t - start) / dur);
+          el.textContent = String(Math.round(target * (0.5 - Math.cos(Math.PI * p) / 2)));
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = String(target);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (n) { cio.observe(n); });
+  }
 })();

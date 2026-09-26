@@ -34,7 +34,9 @@
       <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
         <a href="#showcase">Preview</a>
+        <a href="#readers">Readers</a>
         <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
         <a class="btn btn-primary" href="#get">Get the app</a>
@@ -164,24 +166,70 @@
         <div class="showcase-stage reveal">
           <div class="phone left">
             <div class="notch"></div>
-            <div class="screen">
-              <img src="assets/hero_palm.webp" alt="Selene palm reading screen" />
-              <div class="cap"><b>Palm Reading</b><span>Heart &middot; Head &middot; Life &middot; Fate</span></div>
+            <div class="screen ui">
+              <div class="appui">
+                <div class="statusbar"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div>
+                <div class="head"><b>Palm Reading</b><i class="sicon i-palm"></i></div>
+                <div class="body">
+                  <div class="palm-graphic">
+                    <i class="sicon i-palm pi"></i>
+                    <svg viewBox="0 0 120 150" fill="none" aria-hidden="true">
+                      <path d="M20 60 C45 50 75 55 100 48" stroke="#FF4F8B"/>
+                      <path d="M18 82 C50 78 80 84 104 74" stroke="#4FB8FF"/>
+                      <path d="M32 40 C40 70 42 100 55 128" stroke="#FFB23F"/>
+                      <path d="M72 44 C76 74 82 104 66 130" stroke="#C77DFF"/>
+                    </svg>
+                  </div>
+                  <div class="legend">
+                    <span class="lg"><i style="background:#FF4F8B"></i>Heart</span>
+                    <span class="lg"><i style="background:#4FB8FF"></i>Head</span>
+                    <span class="lg"><i style="background:#FFB23F"></i>Life</span>
+                    <span class="lg"><i style="background:#C77DFF"></i>Fate</span>
+                  </div>
+                  <div class="miniresult"><b>Heart line</b>Deep and curving &mdash; you lead with empathy and feel things fully.</div>
+                </div>
+                <div class="navbar"><i class="sicon i-star"></i><i class="sicon i-cards"></i><i class="sicon i-moon"></i><i class="sicon i-palm on"></i><i class="sicon i-chat"></i></div>
+              </div>
             </div>
           </div>
+
           <div class="phone center">
             <div class="notch"></div>
             <span class="badge-live"><span class="dot"></span> Live reading</span>
-            <div class="screen">
-              <img src="assets/hero_tarot.webp" alt="Selene tarot reading screen" />
-              <div class="cap"><b>Tarot Spread</b><span>Per-position meanings &amp; advice</span></div>
+            <div class="screen ui">
+              <div class="appui">
+                <div class="statusbar"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div>
+                <div class="head"><b>Your Tarot Spread</b><i class="sicon i-cards"></i></div>
+                <div class="body">
+                  <div class="tarot-deal">
+                    <div class="tcard"><i class="sicon i-moon"></i><small>The Moon</small></div>
+                    <div class="tcard hi"><i class="sicon i-star"></i><small>The Star</small></div>
+                    <div class="tcard"><i class="sicon i-sparkle"></i><small>The Sun</small></div>
+                  </div>
+                  <div class="bars"><i></i><i></i><i></i></div>
+                  <div class="affirm">&ldquo;I trust the timing of my life.&rdquo;</div>
+                </div>
+                <div class="navbar"><i class="sicon i-star"></i><i class="sicon i-cards on"></i><i class="sicon i-moon"></i><i class="sicon i-palm"></i><i class="sicon i-chat"></i></div>
+              </div>
             </div>
           </div>
+
           <div class="phone right">
             <div class="notch"></div>
-            <div class="screen">
-              <img src="assets/hero_horoscope.webp" alt="Selene horoscope screen" />
-              <div class="cap"><b>Horoscope</b><span>Today, week, month &amp; year</span></div>
+            <div class="screen ui">
+              <div class="appui">
+                <div class="statusbar"><span>9:41</span><span class="dots"><i></i><i></i><i></i></span></div>
+                <div class="head"><b>Leo &middot; Horoscope</b><i class="sicon i-moon"></i></div>
+                <div class="body">
+                  <div class="medallion"><span class="glyph">&#9804;</span></div>
+                  <div class="tabs"><span class="on">Today</span><span>Week</span><span>Month</span><span>Year</span></div>
+                  <div class="bars"><i></i><i></i></div>
+                  <div class="stat-mini">&#10084;&#65039; <div class="track"><div class="fill" style="--w:82%"></div></div></div>
+                  <div class="stat-mini">&#128188; <div class="track"><div class="fill" style="--w:64%"></div></div></div>
+                  <div class="stat-mini">&#127765; <span style="margin-left:auto"><span class="mphase"></span></span></div>
+                </div>
+                <div class="navbar"><i class="sicon i-star"></i><i class="sicon i-cards"></i><i class="sicon i-moon on"></i><i class="sicon i-palm"></i><i class="sicon i-chat"></i></div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +258,121 @@
             <div class="num">3</div>
             <h3>Reflect &amp; revisit</h3>
             <p>Save readings, continue the conversation with a reader, and return whenever you need a fresh perspective.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Meet the AI readers ===== -->
+    <section id="readers" class="band">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a3"></span></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><i class="sicon i-chat"></i> Your guides</p>
+          <h2>Meet your AI readers</h2>
+          <p>Six distinct personalities, each with their own voice and way of seeing. Pick the guide that fits your mood.</p>
+        </div>
+        <div class="readers-grid">
+          <article class="reader reveal d1">
+            <div class="ph"><span class="pill pop">Popular</span><img src="assets/readers/selene.webp" alt="Selene, an empathetic AI reader" /></div>
+            <div class="rbody">
+              <h4>Selene</h4>
+              <div class="tags"><span>Empathetic</span><span>Intuitive</span></div>
+              <p>A warm big-sister guide who gives compassionate, easy-to-understand readings and always finds hope.</p>
+            </div>
+          </article>
+          <article class="reader reveal d2">
+            <div class="ph"><img src="assets/readers/luna.webp" alt="Luna, a mystical AI reader" /></div>
+            <div class="rbody">
+              <h4>Luna</h4>
+              <div class="tags"><span>Mystical</span><span>Deep</span></div>
+              <p>A spiritual moon priestess who speaks in rich cosmic symbolism, then leaves you one clear takeaway.</p>
+            </div>
+          </article>
+          <article class="reader reveal d3">
+            <div class="ph"><img src="assets/readers/orion.webp" alt="Orion, a practical AI reader" /></div>
+            <div class="rbody">
+              <h4>Orion</h4>
+              <div class="tags"><span>Practical</span><span>Honest</span></div>
+              <p>Logical and realistic &mdash; turns the cards into concrete, real-life next steps with no fluff.</p>
+            </div>
+          </article>
+          <article class="reader reveal d1">
+            <div class="ph"><img src="assets/readers/aurora.webp" alt="Aurora, a healing AI reader" /></div>
+            <div class="rbody">
+              <h4>Aurora</h4>
+              <div class="tags"><span>Spiritual</span><span>Healing</span></div>
+              <p>Focused on self-growth and balance, with a gentle breathing or journaling prompt to ground you.</p>
+            </div>
+          </article>
+          <article class="reader reveal d2">
+            <div class="ph"><img src="assets/readers/mae.webp" alt="Mystic Mae, a playful AI reader" /></div>
+            <div class="rbody">
+              <h4>Mystic Mae</h4>
+              <div class="tags"><span>Fun</span><span>Playful</span></div>
+              <p>A quirky witch with a sense of humour and pop-culture wit &mdash; light-hearted yet still meaningful.</p>
+            </div>
+          </article>
+          <article class="reader reveal d3">
+            <div class="ph"><span class="pill prem">Premium</span><img src="assets/readers/kael.webp" alt="Kael, an advanced AI reader" /></div>
+            <div class="rbody">
+              <h4>Kael</h4>
+              <div class="tags"><span>Advanced</span><span>Profound</span></div>
+              <p>A scholar of esoteric tarot &mdash; astrology, numerology and symbolism woven into layered, deep readings.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== What you can ask ===== -->
+    <section id="ask">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><i class="sicon i-sparkle"></i> Anything on your mind</p>
+          <h2>What will you ask tonight?</h2>
+          <p>Bring a question, or just a feeling. Selene meets you wherever you are.</p>
+        </div>
+        <div class="ask-wrap reveal">
+          <span class="ask"><i class="sicon i-sparkle"></i>Is this relationship right for me?</span>
+          <span class="ask"><i class="sicon i-star"></i>What should I focus on this week?</span>
+          <span class="ask"><i class="sicon i-cards"></i>Should I take the new job?</span>
+          <span class="ask"><i class="sicon i-moon"></i>What does my chart say about today?</span>
+          <span class="ask"><i class="sicon i-palm"></i>What do my palm lines reveal?</span>
+          <span class="ask"><i class="sicon i-chat"></i>How can I find more balance?</span>
+          <span class="ask"><i class="sicon i-sparkle"></i>What is the universe nudging me toward?</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="band">
+      <div class="aurora" aria-hidden="true"><span class="a2"></span></div>
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><i class="sicon i-book"></i> Good to know</p>
+          <h2>Questions, answered</h2>
+        </div>
+        <div class="faq reveal">
+          <div class="qa">
+            <button type="button" aria-expanded="false"><span>Is Selene free to use?</span><span class="pm">+</span></button>
+            <div class="ans"><p>Yes &mdash; you can explore palm readings, daily tarot, horoscopes and card meanings for free. An optional premium unlocks extended horoscopes, advanced readers and more.</p></div>
+          </div>
+          <div class="qa">
+            <button type="button" aria-expanded="false"><span>How accurate are the readings?</span><span class="pm">+</span></button>
+            <div class="ans"><p>Readings are crafted by AI to spark reflection and self-discovery. They&rsquo;re thoughtful and personal, but meant for entertainment and insight &mdash; not as predictions or professional advice.</p></div>
+          </div>
+          <div class="qa">
+            <button type="button" aria-expanded="false"><span>Do I need to create an account?</span><span class="pm">+</span></button>
+            <div class="ans"><p>No. You can start instantly as a guest. Creating an account simply lets you save your readings and sync them across sessions.</p></div>
+          </div>
+          <div class="qa">
+            <button type="button" aria-expanded="false"><span>Can I use it in my language?</span><span class="pm">+</span></button>
+            <div class="ans"><p>Yes. Selene&rsquo;s AI readers can respond in multiple languages &mdash; just set your preference in your profile and ask away.</p></div>
+          </div>
+          <div class="qa">
+            <button type="button" aria-expanded="false"><span>Does the card library work offline?</span><span class="pm">+</span></button>
+            <div class="ans"><p>The full 78-card meanings library is available offline, so you can browse upright and reversed meanings anytime, anywhere.</p></div>
           </div>
         </div>
       </div>
