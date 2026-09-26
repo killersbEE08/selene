@@ -40,17 +40,23 @@
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());
 
-  // Scroll progress bar
+  // Scroll progress bar + nav elevation (rAF-batched, single passive listener)
   var bar = document.getElementById("scroll-progress");
-  if (bar) {
-    var onScroll = function () {
-      var h = document.documentElement;
+  var nav = document.querySelector(".nav");
+  var ticking = false;
+  function updateScroll() {
+    var h = document.documentElement;
+    if (bar) {
       var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
-      bar.style.width = Math.min(100, Math.max(0, scrolled * 100)) + "%";
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+      bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrolled)) + ")";
+    }
+    if (nav) nav.classList.toggle("scrolled", h.scrollTop > 12);
+    ticking = false;
   }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateScroll); }
+  }, { passive: true });
+  updateScroll();
 
   // FAQ accordion
   var qas = document.querySelectorAll(".qa");
