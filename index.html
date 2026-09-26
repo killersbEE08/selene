@@ -9,7 +9,6 @@
   <link rel="icon" type="image/webp" href="assets/app_icon.webp" />
   <link rel="apple-touch-icon" href="assets/app_icon.webp" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Selene — AI Palm, Tarot &amp; Horoscope" />
   <meta property="og:description" content="Read your palm, draw your tarot and chart your horoscope with thoughtful AI. Private by design." />
@@ -23,6 +22,8 @@
 </head>
 <body>
 
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- ===== Nav ===== -->
   <header class="nav">
     <div class="container nav-inner">
@@ -32,6 +33,7 @@
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#features">Features</a>
+        <a href="#showcase">Preview</a>
         <a href="#how">How it works</a>
         <a href="#privacy">Privacy</a>
         <a href="privacy.html">Privacy Policy</a>
@@ -47,60 +49,106 @@
   <main>
     <!-- ===== Hero ===== -->
     <section class="hero">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+      <span class="spark" style="top:18%;left:8%;" aria-hidden="true"><i class="sicon i-sparkle" style="width:16px;height:16px;"></i></span>
+      <span class="spark" style="top:70%;left:15%;animation-delay:1s;" aria-hidden="true"><i class="sicon i-star" style="width:12px;height:12px;"></i></span>
+      <span class="spark" style="top:30%;right:12%;animation-delay:1.6s;" aria-hidden="true"><i class="sicon i-sparkle" style="width:14px;height:14px;"></i></span>
+
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="hero-badge"><span class="dot"></span> Guided by AI, grounded in reflection</span>
+          <span class="hero-badge"><i class="sicon i-sparkle"></i> Guided by AI, grounded in reflection</span>
           <h1>Your pocket <span class="gradient-text">cosmic companion</span></h1>
           <p class="lead">Selene reads your palm, draws your tarot and charts your horoscope with thoughtful AI &mdash; a calm, private space to pause, reflect and see your day a little differently.</p>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="#get">Get the app</a>
-            <a class="btn btn-ghost btn-lg" href="#features">Explore features</a>
+            <a class="btn btn-ghost btn-lg" href="#showcase">See it in action</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><div class="n">78</div><div class="l">Tarot cards, offline</div></div>
+            <div class="stat"><div class="n">6</div><div class="l">AI reader personas</div></div>
+            <div class="stat"><div class="n">12</div><div class="l">Zodiac horoscopes</div></div>
           </div>
           <p class="hero-note">For entertainment and self-reflection only. Not medical, legal or financial advice.</p>
         </div>
+
         <div class="hero-visual">
+          <img class="zodiac-halo" src="assets/zodiac_wheel.webp" alt="" aria-hidden="true" />
           <div class="orb" aria-hidden="true"></div>
           <img src="assets/selene_cutout.webp" alt="Selene, the app's guiding moon-goddess character" width="440" height="440" />
+          <span class="float-chip c1"><i class="sicon i-palm g"></i> Palm line read</span>
+          <span class="float-chip c2"><i class="sicon i-cards m"></i> The Star &middot; upright</span>
+          <span class="float-chip c3"><i class="sicon i-moon gold"></i> Waxing crescent</span>
         </div>
       </div>
     </section>
+
+    <!-- ===== Zodiac marquee (motion graphic) ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="zsign"><img src="assets/zodiac/aries.webp" alt="" /><span>Aries</span></div>
+        <div class="zsign"><img src="assets/zodiac/taurus.webp" alt="" /><span>Taurus</span></div>
+        <div class="zsign"><img src="assets/zodiac/gemini.webp" alt="" /><span>Gemini</span></div>
+        <div class="zsign"><img src="assets/zodiac/cancer.webp" alt="" /><span>Cancer</span></div>
+        <div class="zsign"><img src="assets/zodiac/leo.webp" alt="" /><span>Leo</span></div>
+        <div class="zsign"><img src="assets/zodiac/virgo.webp" alt="" /><span>Virgo</span></div>
+        <div class="zsign"><img src="assets/zodiac/libra.webp" alt="" /><span>Libra</span></div>
+        <div class="zsign"><img src="assets/zodiac/scorpio.webp" alt="" /><span>Scorpio</span></div>
+        <div class="zsign"><img src="assets/zodiac/sagittarius.webp" alt="" /><span>Sagittarius</span></div>
+        <div class="zsign"><img src="assets/zodiac/capricorn.webp" alt="" /><span>Capricorn</span></div>
+        <div class="zsign"><img src="assets/zodiac/aquarius.webp" alt="" /><span>Aquarius</span></div>
+        <div class="zsign"><img src="assets/zodiac/pisces.webp" alt="" /><span>Pisces</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="zsign"><img src="assets/zodiac/aries.webp" alt="" /><span>Aries</span></div>
+        <div class="zsign"><img src="assets/zodiac/taurus.webp" alt="" /><span>Taurus</span></div>
+        <div class="zsign"><img src="assets/zodiac/gemini.webp" alt="" /><span>Gemini</span></div>
+        <div class="zsign"><img src="assets/zodiac/cancer.webp" alt="" /><span>Cancer</span></div>
+        <div class="zsign"><img src="assets/zodiac/leo.webp" alt="" /><span>Leo</span></div>
+        <div class="zsign"><img src="assets/zodiac/virgo.webp" alt="" /><span>Virgo</span></div>
+        <div class="zsign"><img src="assets/zodiac/libra.webp" alt="" /><span>Libra</span></div>
+        <div class="zsign"><img src="assets/zodiac/scorpio.webp" alt="" /><span>Scorpio</span></div>
+        <div class="zsign"><img src="assets/zodiac/sagittarius.webp" alt="" /><span>Sagittarius</span></div>
+        <div class="zsign"><img src="assets/zodiac/capricorn.webp" alt="" /><span>Capricorn</span></div>
+        <div class="zsign"><img src="assets/zodiac/aquarius.webp" alt="" /><span>Aquarius</span></div>
+        <div class="zsign"><img src="assets/zodiac/pisces.webp" alt="" /><span>Pisces</span></div>
+      </div>
+    </div>
 
     <!-- ===== Features ===== -->
     <section id="features">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">What&rsquo;s inside</p>
+          <p class="eyebrow"><i class="sicon i-sparkle"></i> What&rsquo;s inside</p>
           <h2>One app, many ways to reflect</h2>
           <p>Every reading is generated fresh for you and written in plain, encouraging language.</p>
         </div>
         <div class="grid grid-3">
-          <article class="card reveal">
-            <div class="icon">&#128400;</div>
+          <article class="card reveal d1">
+            <div class="icon"><i class="sicon i-palm"></i></div>
             <h3>AI Palm Reading</h3>
             <p>Snap your palm and get a gentle read of your heart, head, life and fate lines, plus love, career and life-path insights.</p>
           </article>
-          <article class="card reveal">
-            <div class="icon">&#127183;</div>
+          <article class="card reveal d2">
+            <div class="icon"><i class="sicon i-cards"></i></div>
             <h3>Tarot Readings</h3>
             <p>Ask a question, pick a spread and draw from the full 78-card Rider&ndash;Waite&ndash;Smith deck with per-position meanings and advice.</p>
           </article>
-          <article class="card reveal">
-            <div class="icon">&#9788;</div>
+          <article class="card reveal d3">
+            <div class="icon"><i class="sicon i-moon"></i></div>
             <h3>Daily Horoscope</h3>
             <p>Today, week, month and year outlooks for your sign, with love, career, health and lucky highlights, plus moon phases.</p>
           </article>
-          <article class="card reveal">
-            <div class="icon">&#128172;</div>
+          <article class="card reveal d1">
+            <div class="icon"><i class="sicon i-chat"></i></div>
             <h3>AI Readers &amp; Chat</h3>
             <p>Chat with distinct reader personas who can draw cards mid-conversation and answer follow-ups in your language.</p>
           </article>
-          <article class="card reveal">
-            <div class="icon">&#128214;</div>
+          <article class="card reveal d2">
+            <div class="icon"><i class="sicon i-book"></i></div>
             <h3>Card Meanings</h3>
             <p>A searchable library of all 78 tarot cards with upright and reversed meanings &mdash; available offline, anytime.</p>
           </article>
-          <article class="card reveal">
-            <div class="icon">&#128274;</div>
+          <article class="card reveal d3">
+            <div class="icon"><i class="sicon i-shield"></i></div>
             <h3>Private by Design</h3>
             <p>Palm photos are stripped of metadata and can be deleted right after your reading. You control your data.</p>
           </article>
@@ -108,25 +156,61 @@
       </div>
     </section>
 
-    <!-- ===== How it works ===== -->
-    <section id="how" class="band">
+    <!-- ===== App demo / showcase ===== -->
+    <section id="showcase" class="showcase band">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">How it works</p>
+          <p class="eyebrow"><i class="sicon i-star"></i> A peek inside</p>
+          <h2>See Selene in action</h2>
+          <p>Beautifully crafted screens that make daily reflection feel effortless.</p>
+        </div>
+        <div class="showcase-stage reveal">
+          <div class="phone left">
+            <div class="notch"></div>
+            <div class="screen">
+              <img src="assets/hero_palm.webp" alt="Selene palm reading screen" />
+              <div class="cap"><b>Palm Reading</b><span>Heart &middot; Head &middot; Life &middot; Fate</span></div>
+            </div>
+          </div>
+          <div class="phone center">
+            <div class="notch"></div>
+            <span class="badge-live"><span class="dot"></span> Live reading</span>
+            <div class="screen">
+              <img src="assets/hero_tarot.webp" alt="Selene tarot reading screen" />
+              <div class="cap"><b>Tarot Spread</b><span>Per-position meanings &amp; advice</span></div>
+            </div>
+          </div>
+          <div class="phone right">
+            <div class="notch"></div>
+            <div class="screen">
+              <img src="assets/hero_horoscope.webp" alt="Selene horoscope screen" />
+              <div class="cap"><b>Horoscope</b><span>Today, week, month &amp; year</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow"><i class="sicon i-sparkle"></i> How it works</p>
           <h2>From question to insight in seconds</h2>
         </div>
         <div class="steps">
-          <div class="step reveal">
+          <div class="step reveal d1">
             <div class="num">1</div>
             <h3>Set your intention</h3>
             <p>Create a profile with your name and birthday, then choose what you&rsquo;d like to explore &mdash; a question, a spread or your sign.</p>
           </div>
-          <div class="step reveal">
+          <div class="step reveal d2">
             <div class="num">2</div>
             <h3>Let Selene read</h3>
             <p>Our AI interprets your palm, cards or chart and writes a clear, personal reading just for this moment.</p>
           </div>
-          <div class="step reveal">
+          <div class="step reveal d3">
             <div class="num">3</div>
             <h3>Reflect &amp; revisit</h3>
             <p>Save readings, continue the conversation with a reader, and return whenever you need a fresh perspective.</p>
@@ -136,28 +220,29 @@
     </section>
 
     <!-- ===== Trust / privacy ===== -->
-    <section id="privacy">
+    <section id="privacy" class="band">
+      <div class="aurora" aria-hidden="true"><span class="a2"></span><span class="a3"></span></div>
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Built on trust</p>
+          <p class="eyebrow"><i class="sicon i-shield"></i> Built on trust</p>
           <h2>Your readings stay yours</h2>
           <p>Selene is designed to be private and transparent from the first tap.</p>
         </div>
         <div class="trust-list reveal">
           <div class="trust-item">
-            <span class="check">&#10003;</span>
+            <i class="sicon i-shield"></i>
             <div><h4>Delete anytime</h4><p>Remove your palm photos or wipe your entire account and data from within the app in a couple of taps.</p></div>
           </div>
           <div class="trust-item">
-            <span class="check">&#10003;</span>
+            <i class="sicon i-shield"></i>
             <div><h4>Photos handled with care</h4><p>Images are stripped of location metadata and, by default, deleted from our servers right after your reading.</p></div>
           </div>
           <div class="trust-item">
-            <span class="check">&#10003;</span>
+            <i class="sicon i-shield"></i>
             <div><h4>Secure by default</h4><p>Data is protected with Firebase Authentication, App Check and encrypted cloud storage.</p></div>
           </div>
           <div class="trust-item">
-            <span class="check">&#10003;</span>
+            <i class="sicon i-shield"></i>
             <div><h4>GDPR &amp; DPDP aligned</h4><p>We honour access and deletion requests and never sell your personal data.</p></div>
           </div>
         </div>
@@ -166,8 +251,11 @@
 
     <!-- ===== Get the app / CTA ===== -->
     <section id="get" class="cta-band">
+      <div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span></div>
       <div class="container">
         <div class="cta-card reveal">
+          <span class="spark" style="top:12%;left:14%;" aria-hidden="true"><i class="sicon i-sparkle" style="width:16px;height:16px;"></i></span>
+          <span class="spark" style="top:20%;right:16%;animation-delay:1s;" aria-hidden="true"><i class="sicon i-star" style="width:13px;height:13px;"></i></span>
           <h2>Read the stars tonight</h2>
           <p>Selene is coming soon to iOS and Android. Your daily moment of cosmic clarity is almost here.</p>
           <div class="store-badges">
@@ -187,7 +275,7 @@
     <!-- ===== Disclaimer ===== -->
     <section style="padding-top:0;">
       <div class="container">
-        <p class="disclaimer reveal">&#10024; Selene is for entertainment and self-reflection only. Readings are generated by AI and are <strong>not</strong> a substitute for professional medical, legal, financial or psychological advice.</p>
+        <p class="disclaimer reveal"><i class="sicon i-sparkle" style="width:14px;height:14px;vertical-align:-2px;background:var(--gold);"></i> Selene is for entertainment and self-reflection only. Readings are generated by AI and are <strong>not</strong> a substitute for professional medical, legal, financial or psychological advice.</p>
       </div>
     </section>
   </main>
@@ -207,6 +295,7 @@
           <div class="footer-col">
             <h5>Product</h5>
             <a href="#features">Features</a>
+            <a href="#showcase">Preview</a>
             <a href="#how">How it works</a>
             <a href="#get">Get the app</a>
           </div>
@@ -225,7 +314,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> Selene. All rights reserved.</span>
-        <span>For entertainment &amp; self-reflection only.</span>
+        <span>Icons by <a href="https://streamlinehq.com" target="_blank" rel="noopener">Streamline</a> &middot; For entertainment &amp; self-reflection only.</span>
       </div>
     </div>
   </footer>

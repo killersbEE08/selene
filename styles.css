@@ -392,7 +392,183 @@ h1, h2, h3, h4 { font-family: var(--font-head); color: var(--text); line-height:
   .nav-cta .btn:not(.nav-toggle) { display: none; }
 }
 
+/* =============================================================
+   ENHANCEMENTS v2 — Streamline icons, motion graphics, app demo
+   ============================================================= */
+
+/* ---------- Streamline icon system (mask → themeable) ---------- */
+.sicon {
+  display: inline-block;
+  width: 1em; height: 1em;
+  background: currentColor;
+  -webkit-mask: var(--m) center / contain no-repeat;
+  mask: var(--m) center / contain no-repeat;
+}
+.i-palm    { --m: url(assets/icons/palm.svg); }
+.i-cards   { --m: url(assets/icons/cards.svg); }
+.i-moon    { --m: url(assets/icons/moon.svg); }
+.i-chat    { --m: url(assets/icons/chat.svg); }
+.i-book    { --m: url(assets/icons/book.svg); }
+.i-shield  { --m: url(assets/icons/shield.svg); }
+.i-sparkle { --m: url(assets/icons/sparkle.svg); }
+.i-star    { --m: url(assets/icons/star.svg); }
+
+/* Feature-card icon tile now renders a gradient-filled Streamline glyph */
+.card .icon { position: relative; overflow: hidden; }
+.card .icon .sicon {
+  width: 28px; height: 28px;
+  background: var(--cta);
+}
+.card:hover .icon .sicon { animation: icon-pop 0.5s ease; }
+@keyframes icon-pop { 0%{transform:scale(1);} 40%{transform:scale(1.18) rotate(-4deg);} 100%{transform:scale(1);} }
+
+/* Eyebrow / badge sparkle */
+.hero-badge .sicon, .eyebrow .sicon { width: 14px; height: 14px; background: var(--gold); }
+.trust-item .sicon { width: 22px; height: 22px; background: var(--gold); }
+.step .num .sicon { width: 20px; height: 20px; background: #fff; }
+
+/* ---------- Animated aurora blobs (hero + sections) ---------- */
+.aurora { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.aurora span {
+  position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55;
+  mix-blend-mode: screen;
+}
+.aurora .a1 { width: 420px; height: 420px; background: #8B3DFF; top: -80px; left: -60px; animation: drift1 16s ease-in-out infinite; }
+.aurora .a2 { width: 360px; height: 360px; background: #FF3DAE; top: 20%; right: -80px; animation: drift2 19s ease-in-out infinite; }
+.aurora .a3 { width: 300px; height: 300px; background: #4FB8FF; bottom: -100px; left: 30%; animation: drift3 22s ease-in-out infinite; }
+@keyframes drift1 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(60px,40px) scale(1.15);} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-50px,50px) scale(1.1);} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(40px,-40px) scale(1.2);} }
+.hero, section.band, .cta-band { position: relative; }
+.hero > .container, .band > .container, .cta-band > .container { position: relative; z-index: 1; }
+
+/* ---------- Floating sparkles decoration ---------- */
+.spark {
+  position: absolute; color: var(--glow);
+  animation: twinkle 3s ease-in-out infinite, floaty 7s ease-in-out infinite;
+  pointer-events: none; opacity: 0.8; z-index: 1;
+}
+.spark .sicon { display:block; }
+@keyframes twinkle { 0%,100%{opacity:0.25; transform:scale(0.8);} 50%{opacity:1; transform:scale(1.1);} }
+@keyframes floaty { 0%,100%{translate:0 0;} 50%{translate:0 -12px;} }
+
+/* ---------- Hero visual: rotating zodiac halo + orbiting chips ---------- */
+.hero-visual .zodiac-halo {
+  position: absolute; width: 118%; aspect-ratio: 1; left: 50%; top: 50%;
+  translate: -50% -50%; opacity: 0.14; z-index: 0;
+  animation: spin 60s linear infinite;
+}
+@keyframes spin { to { rotate: 360deg; } }
+
+.float-chip {
+  position: absolute; z-index: 2;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 14px;
+  background: rgba(20, 11, 46, 0.9);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  font-family: var(--font-head); font-size: 0.82rem; color: #fff;
+  backdrop-filter: blur(6px);
+  animation: floaty 6s ease-in-out infinite;
+}
+.float-chip .sicon { width: 18px; height: 18px; }
+.float-chip.c1 { top: 6%; left: -6%; }
+.float-chip.c2 { bottom: 14%; right: -8%; animation-delay: 1.2s; }
+.float-chip.c3 { bottom: -2%; left: 8%; animation-delay: 2.1s; }
+.float-chip .g { color: var(--glow); }
+.float-chip .m { color: var(--magenta); }
+.float-chip .gold { color: var(--gold); }
+
+/* ---------- App demo: phone mockups ---------- */
+.showcase { position: relative; }
+.showcase-stage {
+  display: flex; justify-content: center; align-items: flex-end;
+  gap: 28px; perspective: 1400px; margin-top: 20px;
+}
+.phone {
+  position: relative; flex: 0 0 auto;
+  width: 232px; aspect-ratio: 9 / 19;
+  border-radius: 38px; padding: 9px;
+  background: linear-gradient(160deg, #2a1a58, #0d0730);
+  border: 1px solid #4a3688;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.55), inset 0 0 0 2px rgba(255,255,255,0.04);
+  transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
+  animation: floaty 8s ease-in-out infinite;
+}
+.phone .screen {
+  position: relative; height: 100%; border-radius: 30px; overflow: hidden;
+  background: var(--bg);
+}
+.phone .screen img { width: 100%; height: 100%; object-fit: cover; }
+.phone .notch {
+  position: absolute; top: 10px; left: 50%; translate: -50%;
+  width: 92px; height: 20px; border-radius: 12px; background: #050213; z-index: 3;
+}
+.phone .screen::after {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(180deg, rgba(11,6,32,0.15) 0%, rgba(11,6,32,0) 30%, rgba(11,6,32,0.55) 100%);
+}
+.phone .cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  padding: 14px 16px 18px; text-align: left;
+}
+.phone .cap b { font-family: var(--font-head); color:#fff; font-size:0.98rem; display:block; }
+.phone .cap span { font-size: 0.78rem; color: var(--text-secondary); }
+.phone.center { width: 256px; z-index: 3; animation-delay: 0.4s; }
+.phone.left  { transform: rotateY(18deg) translateZ(-30px) translateY(18px); z-index: 2; animation-delay: 0s; }
+.phone.right { transform: rotateY(-18deg) translateZ(-30px) translateY(18px); z-index: 2; animation-delay: 0.8s; }
+.showcase-stage:hover .phone.left  { transform: rotateY(10deg) translateY(6px); }
+.showcase-stage:hover .phone.right { transform: rotateY(-10deg) translateY(6px); }
+.phone .badge-live {
+  position: absolute; top: 16px; right: 14px; z-index: 4;
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 9px; border-radius: 999px; font-size: 0.66rem; font-family: var(--font-head);
+  background: rgba(61,220,151,0.15); color: #6ef0b4; border: 1px solid rgba(61,220,151,0.4);
+}
+.phone .badge-live .dot { width:6px; height:6px; border-radius:50%; background:#3DDC97; box-shadow:0 0 8px #3DDC97; animation: twinkle 1.8s infinite; }
+
+/* ---------- Zodiac marquee (motion graphic) ---------- */
+.marquee { position: relative; overflow: hidden; padding: 26px 0; -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.marquee-track { display: flex; gap: 22px; width: max-content; animation: marquee 40s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.zsign {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 18px 10px 10px; border-radius: 999px;
+  border: 1px solid var(--border); background: rgba(26,16,56,0.6); white-space: nowrap;
+}
+.zsign img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+.zsign span { font-family: var(--font-head); font-size: 0.9rem; color: var(--text-secondary); text-transform: capitalize; }
+
+/* ---------- Stat row ---------- */
+.stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 34px; }
+.stat .n { font-family: var(--font-head); font-weight: 800; font-size: 1.9rem; background: var(--heading-gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.stat .l { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ---------- Tilt-on-scroll shimmer for section heads ---------- */
+.section-head .eyebrow { display: inline-flex; align-items: center; gap: 7px; }
+
+/* ---------- Scroll progress bar ---------- */
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100; background: var(--cta); box-shadow: 0 0 12px var(--magenta); }
+
+/* ---------- Reveal variants ---------- */
+.reveal.d1 { transition-delay: 0.08s; }
+.reveal.d2 { transition-delay: 0.16s; }
+.reveal.d3 { transition-delay: 0.24s; }
+.reveal.d4 { transition-delay: 0.32s; }
+.reveal.d5 { transition-delay: 0.40s; }
+
+@media (max-width: 900px) {
+  .showcase-stage { gap: 0; }
+  .phone.left, .phone.right { display: none; }
+  .phone.center { width: 248px; }
+  .float-chip.c1 { left: 0; } .float-chip.c2 { right: 0; }
+  .stats { gap: 26px; justify-content: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
+  .marquee-track { animation: none !important; }
+  .phone.left { transform: rotateY(14deg); } .phone.right { transform: rotateY(-14deg); }
 }
