@@ -1,0 +1,19 @@
+{
+  "name": "Selene — AI Palm, Tarot & Horoscope",
+  "short_name": "Selene",
+  "description": "Selene reads your palm, draws your tarot and charts your horoscope with thoughtful AI — a calm, private space for daily reflection.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0810",
+  "theme_color": "#0A0810",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/app_icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
