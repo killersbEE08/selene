@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://selene.princelabs.me/sitemap.xml
