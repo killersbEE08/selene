@@ -51,8 +51,8 @@ Pages → your project → **Custom domains** → add e.g. `selene.app` and foll
 
 These are placeholders and **must be replaced** with real values:
 
-- [ ] **Contact emails** — `hello@selene.app` and `privacy@selene.app` appear in the footer and legal pages. Replace with real, monitored inboxes (search all `.html` files).
-- [ ] **Company / legal entity name** — legal pages say "Selene"; add your registered entity if you have one.
+- [x] **Contact email** — set to `hello@princelabs.me` in the footer and all legal pages (help, privacy & account-deletion requests).
+- [x] **Developer name** — legal pages (privacy, terms, delete-account) identify the developer as **one1 Eleven dev** for Google Play.
 - [ ] **Governing law** — Terms §13 uses **India**. Change if your business is established elsewhere.
 - [ ] **"Last updated" dates** — set to your actual publish date in `privacy.html`, `terms.html`.
 - [ ] **App store links** — the "Coming soon" badges on the landing page link to `#`. Point them at your real App Store / Google Play listings when live.
